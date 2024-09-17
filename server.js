@@ -4,6 +4,7 @@ const dotenv = require("dotenv")
 const mongoose = require("mongoose")
 const methodOverride = require("method-override")
 const morgan = require("morgan")
+const moviesCtrl = require("./controllers/movies")
 
 
 // App + Configurations
@@ -32,7 +33,9 @@ mongoose.connection.on("error", (err) => {
 
 
 // Routes
-
+app.get("/", (req, res) => {
+    res.render("index")
+})
 
 
 // Server Handler
