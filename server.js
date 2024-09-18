@@ -38,7 +38,8 @@ app.get("/", (req, res) => {
 })
 
 app.get("/movies", moviesCtrl.getAllMovies) // movie index
-app.get("/movies/:id", moviesCtrl.showMovie)  // movie show 
+// app.get("/movies/:id", moviesCtrl.showMovie)  // movie show 
+app.get("/movies/new", moviesCtrl.createMovie)
 
 
 
