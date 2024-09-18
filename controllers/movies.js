@@ -33,11 +33,23 @@ const createMovie = async (req, res) => {
     res.render("movies/new")
 }
 
+    // Post Movie - POST - /movies
+const postMovie = async (req, res) => {
+    try{
+        await Movie.create(req.body)
+        res.redirect("/movies")
+    } catch(err){
+        console.log(err)
+        res.status(400).json({error: err.message})
+    }
+}
+
 // Export
 module.exports = {
     getAllMovies, 
     // showMovie,
-    createMovie
+    createMovie,
+    postMovie
 }
 
 
