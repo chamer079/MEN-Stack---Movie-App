@@ -37,6 +37,8 @@ app.get("/", (req, res) => {
     res.render("index")
 })
 
+app.get("/movies", moviesCtrl.getAllMovies)
+
 
 // Server Handler
 app.listen(PORT, () => {

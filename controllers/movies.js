@@ -16,6 +16,8 @@ const getAllMovies = async (req, res) => {
 
 
 // Export
-
+module.exports = {
+    getAllMovies
+}
 
 
