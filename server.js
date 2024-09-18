@@ -38,10 +38,11 @@ app.get("/", (req, res) => {
 })
 
 app.get("/movies", moviesCtrl.getAllMovies) 
-// app.get("/movies/:id", moviesCtrl.showMovie)  
 app.get("/movies/new", moviesCtrl.createMovie)
+app.get("/movies/:id", moviesCtrl.showMovie)  
 app.post("/movies", moviesCtrl.postMovie)
 app.delete("movies/:id", moviesCtrl.deleteMovie)
+app.get("movies/:id/edit", moviesCtrl.editMovie)
 
 
 

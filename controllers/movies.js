@@ -15,23 +15,23 @@ const getAllMovies = async (req, res) => {
     }
 }
 
-    // Show Movie - GET - /movies/:id
-// const showMovie = async (req, res) => {
-//     try{
-//         const foundMovie = await Movie.findById(req.params.id)
-//         const contextData = { movie: foundMovie}
-//         res.send("Show Specific Movie Page")
-//     } catch(err){
-//         console.log(err)
-//         res.redirect("/")
-//     }
-// }
-
     // New Movie - GET - /movies/new
 const createMovie = async (req, res) => {
-    // res.send("Create a Movie Page - Need to Build Out a Form")
-    res.render("movies/new")
+// res.send("Create a Movie Page - Need to Build Out a Form")
+res.render("movies/new")
 }
+    // Show Movie - GET - /movies/:id
+const showMovie = async (req, res) => {
+    try{
+        const foundMovie = await Movie.findById(req.params.id)
+        const contextData = { movie: foundMovie}
+        res.render("movies/show", contextData)
+    } catch(err){
+        console.log(err)
+        res.redirect("/")
+    }
+}
+
 
     // Post Movie - POST - /movies
 const postMovie = async (req, res) => {
@@ -44,10 +44,23 @@ const postMovie = async (req, res) => {
     }
 }
 
+    // Delete Movie - DELETE - /movies/:id
 const deleteMovie = async (req, res) => {
     try{
         await Movie.findByIdAndDelete(req.params.id)
         console.log("Response from DB after deletion:", deleteMovie)
+    } catch(err){
+        console.log(err)
+        res.redirect("/movies")
+    }
+}
+
+    // Edit Movie - GET - /movies/:id
+const editMovie = async (req, res) => {
+    try{
+        const movieToEdit = await Movie.findById(req.params.id)
+        console.log(req.params.id)
+        res.send("movies/edit", { movie: movieToEdit })
     } catch(err){
         console.log(err)
         res.redirect("/")
@@ -57,10 +70,11 @@ const deleteMovie = async (req, res) => {
 // Export
 module.exports = {
     getAllMovies, 
-    // showMovie,
+    showMovie,
     createMovie,
     postMovie,
-    deleteMovie
+    deleteMovie, 
+    editMovie
 }
 
 
