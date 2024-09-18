@@ -37,10 +37,11 @@ app.get("/", (req, res) => {
     res.render("index")
 })
 
-app.get("/movies", moviesCtrl.getAllMovies) // movie index
-// app.get("/movies/:id", moviesCtrl.showMovie)  // movie show 
+app.get("/movies", moviesCtrl.getAllMovies) 
+// app.get("/movies/:id", moviesCtrl.showMovie)  
 app.get("/movies/new", moviesCtrl.createMovie)
 app.post("/movies", moviesCtrl.postMovie)
+app.delete("movies/:id", moviesCtrl.deleteMovie)
 
 
 

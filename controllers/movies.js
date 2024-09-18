@@ -44,12 +44,23 @@ const postMovie = async (req, res) => {
     }
 }
 
+const deleteMovie = async (req, res) => {
+    try{
+        await Movie.findByIdAndDelete(req.params.id)
+        console.log("Response from DB after deletion:", deleteMovie)
+    } catch(err){
+        console.log(err)
+        res.redirect("/")
+    }
+}
+
 // Export
 module.exports = {
     getAllMovies, 
     // showMovie,
     createMovie,
-    postMovie
+    postMovie,
+    deleteMovie
 }
 
 
