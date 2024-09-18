@@ -37,7 +37,9 @@ app.get("/", (req, res) => {
     res.render("index")
 })
 
-app.get("/movies", moviesCtrl.getAllMovies)
+app.get("/movies", moviesCtrl.getAllMovies) // movie index
+app.get("/movies/:id", moviesCtrl.showMovie)  // movie show 
+
 
 
 // Server Handler
