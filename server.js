@@ -43,6 +43,7 @@ app.get("/movies/:id", moviesCtrl.showMovie)
 app.post("/movies", moviesCtrl.postMovie)
 app.delete("movies/:id", moviesCtrl.deleteMovie)
 app.get("movies/:id/edit", moviesCtrl.editMovie)
+app.put("/movies/:id", moviesCtrl.updateMovie)
 
 
 

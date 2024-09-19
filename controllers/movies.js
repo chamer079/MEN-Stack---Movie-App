@@ -20,6 +20,7 @@ const createMovie = async (req, res) => {
 // res.send("Create a Movie Page - Need to Build Out a Form")
 res.render("movies/new")
 }
+
     // Show Movie - GET - /movies/:id
 const showMovie = async (req, res) => {
     try{
@@ -67,6 +68,17 @@ const editMovie = async (req, res) => {
     }
 }
 
+    // Upodate a Movie - PUT - /movies/:id
+const updateMovie = async (req, res) => {
+    try{
+        console.log("UPDATE - testing data from form:", req.body)
+        await Movie.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    } catch(err){
+        console.log(err)
+        res.redirect(`/movies/${req.params.id}`)
+    }
+}
+
 // Export
 module.exports = {
     getAllMovies, 
@@ -74,7 +86,8 @@ module.exports = {
     createMovie,
     postMovie,
     deleteMovie, 
-    editMovie
+    editMovie, 
+    updateMovie
 }
 
 
