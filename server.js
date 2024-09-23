@@ -4,6 +4,8 @@ const dotenv = require("dotenv")
 const mongoose = require("mongoose")
 const methodOverride = require("method-override")
 const morgan = require("morgan")
+
+// Import Controllers 
 const moviesCtrl = require("./controllers/movies")
 
 
@@ -29,7 +31,6 @@ mongoose.connection.on("error", (err) => {
 })
 
 
-// Import Controllers
 
 
 // Routes
