@@ -33,11 +33,11 @@ const showMovie = async (req, res) => {
     }
 }
 
-
     // Post Movie - POST - /movies
 const postMovie = async (req, res) => {
     try{
         await Movie.create(req.body)
+        console.log("req.body", req.body)
         res.redirect("/movies")
     } catch(err){
         console.log(err)

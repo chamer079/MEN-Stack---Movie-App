@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Create a New Movie Here</h1>
-    <form>
+    <form action="/movies" method="POST">
         <div>
             <label for="title">Movie Title:</label>
             <input type="text" name="title" id="title">
@@ -17,12 +17,12 @@
             <input type="text" name="director" id="director">
         </div>
         <div>
-            <label for="title">Movie Title:</label>
-            <input type="text" name="title" id="title">
-        </div>
-        <div>
             <label for="actors">Actors:</label>
             <input type="text" name="actors" id="actors">
+        </div>
+        <div>
+            <label for="runningTime">Running Time:</label>
+            <input type="text" name="runningTime" id="runningTime">
         </div>
         <div>
             <label for="genre">Movie Genre:</label>
