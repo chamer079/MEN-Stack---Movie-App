@@ -7,5 +7,10 @@
 </head>
 <body>
     <h1>All Movies Page</h1>
+    <% movies.forEach(movie => { %> 
+        <div>
+            <img src="<%= movie.movieImg %>">
+        </div>
+    <% }) %>
 </body>
 </html>

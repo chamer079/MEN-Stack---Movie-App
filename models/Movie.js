@@ -4,6 +4,7 @@ const mongoose = require("mongoose")
 
 // Schema
 const movieSchema = new mongoose.Schema({
+    movieImg: { type: String, required: true },
     title: { type: String, required: true },
     director: { type: String, required: true },
     actors: { type: String, required: true },
