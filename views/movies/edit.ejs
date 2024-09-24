@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <%- include("../partials/nav") %>
     <h1>Edit Page</h1>
     <form method="POST" action="/movies/<%= movie._id %>?_method=PUT" >
         <div>

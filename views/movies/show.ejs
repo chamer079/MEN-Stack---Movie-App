@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <%- include("../partials/nav") %>
     <h1>Show Specific Movie Page</h1>
     <div>
        <div>
@@ -21,6 +22,7 @@
         <p>Released: <%= movie.releaseYear %></p>
        </div>
     </div>
+    <a href="/movies/<%= movie._id %>/edit">Edit Movie</a>
     <div>
         <form method="POST" action="/movies/<%= movie._id %>?_method=DELETE">
             <button type="submit">Delete Movie</button>
