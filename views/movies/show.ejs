@@ -21,5 +21,10 @@
         <p>Released: <%= movie.releaseYear %></p>
        </div>
     </div>
+    <div>
+        <form method="POST" action="/movies/<%= movie._id %>?_method=DELETE">
+            <button type="submit">Delete Movie</button>
+        </form>
+    </div>
 </body>
 </html>

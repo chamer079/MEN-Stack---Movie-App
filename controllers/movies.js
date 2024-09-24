@@ -50,7 +50,8 @@ const postMovie = async (req, res) => {
 const deleteMovie = async (req, res) => {
     try{
         await Movie.findByIdAndDelete(req.params.id)
-        console.log("Response from DB after deletion:", deleteMovie)
+        // console.log("Response from DB after deletion:", deleteMovie)
+        res.redirect("/movies")
     } catch(err){
         console.log(err)
         res.redirect("/movies")

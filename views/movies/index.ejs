@@ -9,7 +9,7 @@
     <h1>All Movies Page</h1>
     <% movies.forEach(movie => { %> 
         <div>
-            <img src="<%= movie.movieImg %>">
+            <a href="/movies/<%= movie._id %>"><img src="<%= movie.movieImg %>"></a>
         </div>
     <% }) %>
 </body>
