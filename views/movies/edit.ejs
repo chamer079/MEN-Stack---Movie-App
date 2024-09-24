@@ -7,6 +7,40 @@
 </head>
 <body>
     <h1>Edit Page</h1>
-    <p>Will need to create edit prepopulated edit form.</p>
+    <form method="POST" action="/movies/<%= movie._id %>?_method=PUT" >
+        <div>
+            <label for="movieImg">Movie Image:</label>
+            <input type="text" name="movieImg" id="movieImg" value="<%= movie.movieImg %>">
+        </div>
+        <div>
+            <label for="title">Movie Title:</label>
+            <input type="text" name="title" id="title" value="<%= movie.title %>">
+        </div>
+        <div>
+            <label for="director">Director:</label>
+            <input type="text" name="director" id="director" value="<%= movie.director %>">
+        </div>
+        <div>
+            <label for="actors">Actors:</label>
+            <input type="text" name="actors" id="actors" value="<%= movie.actors %>">
+        </div>
+        <div>
+            <label for="runningTime">Running Time:</label>
+            <input type="text" name="runningTime" id="runningTime" value="<%= movie.runningTime %>">
+        </div>
+        <div>
+            <label for="genre">Movie Genre:</label>
+            <input type="text" name="genre" id="genre" value="<%= movie.genre %>">
+        </div>
+        <div>
+            <label for="rating">Movie Rating:</label>
+            <input type="text" name="rating" id="rating" value="<%= movie.rating %>">
+        </div>
+        <div>
+            <label for="releaseYear">Released:</label>
+            <input type="text" name="releaseYear" id="releaseYear" value="<%= movie.releaseYear %>">
+        </div>
+        <button type=""submit>Submit Movie</button>
+    </form>
 </body>
 </html>

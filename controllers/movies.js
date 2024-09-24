@@ -26,6 +26,7 @@ const showMovie = async (req, res) => {
     try{
         const foundMovie = await Movie.findById(req.params.id)
         const contextData = { movie: foundMovie}
+        // console.log(foundMovie)
         res.render("movies/show", contextData)
     } catch(err){
         console.log(err)
@@ -56,23 +57,24 @@ const deleteMovie = async (req, res) => {
     }
 }
 
-    // Edit Movie - GET - /movies/:id
+    // Edit Movie - GET - /movies/:id/edit
 const editMovie = async (req, res) => {
     try{
         const movieToEdit = await Movie.findById(req.params.id)
-        console.log(req.params.id)
-        res.send("movies/edit", { movie: movieToEdit })
+        // console.log(movieToEdit)
+        res.render("movies/edit", { movie: movieToEdit })
     } catch(err){
         console.log(err)
         res.redirect("/")
     }
 }
 
-    // Upodate a Movie - PUT - /movies/:id
+    // Update a Movie - PUT - /movies/:id
 const updateMovie = async (req, res) => {
     try{
         console.log("UPDATE - testing data from form:", req.body)
         await Movie.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        res.redirect(`/movies/${req.params.id}`)
     } catch(err){
         console.log(err)
         res.redirect(`/movies/${req.params.id}`)
@@ -87,7 +89,7 @@ module.exports = {
     postMovie,
     deleteMovie, 
     editMovie, 
-    updateMovie
+    updateMovie,
 }
 
 
