@@ -22,11 +22,26 @@
         <p>Released: <%= movie.releaseYear %></p>
        </div>
     </div>
-    <a href="/movies/<%= movie._id %>/edit">Edit Movie</a>
     <div>
-        <form method="POST" action="/movies/<%= movie._id %>?_method=DELETE">
-            <button type="submit">Delete Movie</button>
-        </form>
+        <h3>Share your thoughts about this movie!</h3>
+        <form method="POST" action="/movies/<%= movie._id %>/comments"></form>
+        <div>
+            <label for="comment">Comment:</label>
+            <input id="comment" type="text" name="comment" size="300" />
+        </div>
+        <div></div>
+            <label for="">Username:</label>
+            <input id="user" type="text" name="user" />
+        </div>
+        <button type="submit">Submit Comment</button>
+    </div>
+    <div>
+        <a href="/movies/<%= movie._id %>/edit">Edit Movie</a>
+        <div>
+            <form method="POST" action="/movies/<%= movie._id %>?_method=DELETE">
+                <button type="submit">Delete Movie</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>

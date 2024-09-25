@@ -33,7 +33,7 @@ mongoose.connection.on("error", (err) => {
 
 
 
-// Routes
+// Movie Routes
 app.get("/", (req, res) => {
     res.render("index")
 })
@@ -46,6 +46,9 @@ app.delete("/movies/:id", moviesCtrl.deleteMovie)
 app.get("/movies/:id/edit", moviesCtrl.editMovie)
 app.put("/movies/:id", moviesCtrl.updateMovie)
 
+
+// Comment Routes
+app.post("/movies/:id/comments", moviesCtrl.postComment)
 
 
 // Server Handler
