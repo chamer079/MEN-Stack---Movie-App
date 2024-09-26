@@ -7,7 +7,7 @@ const morgan = require("morgan")
 
 // Import Controllers 
 const moviesCtrl = require("./controllers/movies")
-// 
+const commentsCtrl = require("./controllers/comments") 
 
 // App + Configurations
 dotenv.config()
@@ -48,7 +48,7 @@ app.put("/movies/:id", moviesCtrl.updateMovie)
 
 
 // Comment Routes
-app.post("/movies/:id/comments", moviesCtrl.postComment)
+app.post("/movies/:id/comments", commentsCtrl.postComment)
 
 
 // Server Handler
